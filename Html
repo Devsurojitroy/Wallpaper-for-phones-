@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Wallpaper Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Phone Wallpaper Gallery</h1>
+        <input type="text" id="search" placeholder="Search wallpapers..." />
+    </header>
+    
+    <div class="gallery">
+        <div class="wallpaper" data-category="nature">
+            <img src="wallpapers/wallpaper1.jpg" alt="Nature Wallpaper 1">
+        </div>
+        <div class="wallpaper" data-category="abstract">
+            <img src="wallpapers/wallpaper2.jpg" alt="Abstract Wallpaper 1">
+        </div>
+        <div class="wallpaper" data-category="space">
+            <img src="wallpapers/wallpaper3.jpg" alt="Space Wallpaper 1">
+        </div>
+        <!-- Add more wallpapers as needed -->
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>© 2024 Surojit's Wallpaper Gallery. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
