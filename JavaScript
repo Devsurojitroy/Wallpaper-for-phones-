@@ -1,0 +1,40 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search');
+    const wallpapers = document.querySelectorAll('.wallpaper');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-image');
+    const captionText = document.getElementById('caption');
+    const closeBtn = document.querySelector('.close');
+
+    // Search filter
+    searchInput.addEventListener('input', function() {
+        const searchText = searchInput.value.toLowerCase();
+        wallpapers.forEach(wallpaper => {
+            const category = wallpaper.getAttribute('data-category');
+            if (category.toLowerCase().includes(searchText)) {
+                wallpaper.style.display = '';
+            } else {
+                wallpaper.style.display = 'none';
+            }
+        });
+    });
+
+    // Modal functionality
+    wallpapers.forEach(wallpaper => {
+        wallpaper.addEventListener('click', function() {
+            modal.style.display = 'block';
+            modalImg.src = this.querySelector('img').src;
+            captionText.textContent = this.querySelector('img').alt;
+        });
+    });
+
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
